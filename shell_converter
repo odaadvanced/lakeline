@@ -1,0 +1,235 @@
+Python 3.7.3 (/usr/bin/python3)
+>>> %cd /home/pi/sphero-sdk-raspberrypi-python/getting_started/observer/power
+>>> %Run get_battery_state.py
+Checking RVR firmware versions...
+Checking CMS firmware versions...
+=====================================================
+===== A NEWER VERSION OF FIRMWARE IS AVAILABLE ======
+=====================================================
+If you would like to update your unit, connect RVR to
+the Sphero EDU app to install the latest firmware.
+=====================================================
+
+Press any key to continue...
+j
+Firmware check done.
+Battery percentage:  {'percentage': 16}
+Voltage state:  {'state': 1}
+Voltage states:  [unknown: 0, ok: 1, low: 2, critical: 3]
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> %Run get_battery_state.py
+Battery percentage:  {'percentage': 16}
+Voltage state:  {'state': 1}
+Voltage states:  [unknown: 0, ok: 1, low: 2, critical: 3]
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> %cd /home/pi/sphero-sdk-raspberrypi-python/getting_started/observer/leds
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> %Run set_all_leds.py
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> %cd /home/pi/dev/lakeline/luke
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 48, in <module>
+    main()
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34, in main
+    led_brightness_values=[color for _ in range(10) for color in [randrange, randrange, randrange]]
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34, in <listcomp>
+    led_brightness_values=[color for _ in range(10) for color in [randrange, randrange, randrange]]
+NameError: name 'randrange' is not defined
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(10) for randrange color in [255, 100, 0]]
+                                                                      ^
+SyntaxError: invalid syntax
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 48, in <module>
+    main()
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34, in main
+    led_brightness_values=[color for _ in rangrange(10) for color in [255, 100, 0]]
+NameError: name 'rangrange' is not defined
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(10) for color in [random.randint 255, random.randint 255, random.randint 255]]
+                                                                                   ^
+SyntaxError: invalid syntax
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(10) for color in [random.randint 255, random.randint 255, random.randint 255]]
+                                                                                   ^
+SyntaxError: invalid syntax
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(10) for import random color in [random.randint 255, random.randint 255, random.randint 255]]
+                                                             ^
+SyntaxError: invalid syntax
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(10) for color in [random.randint 255, random.randint 255, random.randint 255]]
+                                                                                   ^
+SyntaxError: invalid syntax
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(import random) for color in [random.randint 255, random.randint 255, random.randint 255]]
+                                                     ^
+SyntaxError: invalid syntax
+>>> %Run set_all_leds.py
+Traceback (most recent call last):
+  File "/home/pi/dev/lakeline/luke/set_all_leds.py", line 34
+    led_brightness_values=[color for _ in range(import) for color in [random.randint 255, random.randint 255, random.randint 255]]
+                                                     ^
+SyntaxError: invalid syntax
+>>> 'delmar'.upper()
+'DELMAR'
+>>> 'DELMAR'.lower()
+'delmar'
+>>> 'DeLmAR'.lower()
+'delmar'
+>>> 'dalmar'.__class__ (__ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar'.__class__ (__ is double underscore)
+                                              ^
+SyntaxError: invalid syntax
+>>> 'dalmar'.__class__. (__ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar'.__class__. (__ is double underscore)
+                        ^
+SyntaxError: invalid syntax
+>>> 'dalmar'._class_. (_ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar'._class_. (_ is double underscore)
+                      ^
+SyntaxError: invalid syntax
+>>> 'dalmar' .__class__. (__ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar' .__class__. (__ is double underscore)
+                         ^
+SyntaxError: invalid syntax
+>>> 'dalmar'.__class__(__ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar'.__class__(__ is double underscore)
+                                             ^
+SyntaxError: invalid syntax
+>>> 'dalmar'.__class__ (__ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar'.__class__ (__ is double underscore)
+                                              ^
+SyntaxError: invalid syntax
+>>> 'dalmar'__class__ (__ is double underscore)
+  File "<pyshell>", line 1
+    'dalmar'__class__ (__ is double underscore)
+                    ^
+SyntaxError: invalid syntax
+>>> 'dalmar'__class__
+  File "<pyshell>", line 1
+    'dalmar'__class__
+                    ^
+SyntaxError: invalid syntax
+>>> 'dalmar'.__class__
+<class 'str'>
+>>> .__class__
+  File "<pyshell>", line 1
+    .__class__
+    ^
+SyntaxError: invalid syntax
+>>> [1].__class__
+<class 'list'>
+>>> 1.__class__
+  File "<pyshell>", line 1
+    1.__class__
+              ^
+SyntaxError: invalid syntax
+>>> (1).__class__
+<class 'int'>
+>>> u = (hello)
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+NameError: name 'hello' is not defined
+>>> 12.34.__class__
+<class 'float'>
+>>> [4.4.4.4.]
+  File "<pyshell>", line 1
+    [4.4.4.4.]
+         ^
+SyntaxError: invalid syntax
+>>> %cd /home/pi/Public/prog_pi_ed3
+>>> %Run 05_01_converter.py
+Convert inches to mm
+converting 2 inches
+50mm
+>>> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Python 3.7.3 (/usr/bin/python3)
+>>> %Run 05_01_converter.py
+Convert inches to mm
+converting 90 inches
+50mm
+>>> %Run 05_01_converter.py
+Convert inches to mm
+converting 90 inches
+2250mm
+>>> c2 = ScaleConverter('feet', 'yards', o.333)
+  File "<pyshell>", line 1
+    c2 = ScaleConverter('feet', 'yards', o.333)
+                                             ^
+SyntaxError: invalid syntax
+>>> c2 = ScaleConverter('feet', 'yards', 0.333)
+>>> print(str(c2.convert(3)) + c2.units_to)
+0.9990000000000001yards
+>>> print(str(c2.convert(10)) + c2.units_to)
+3.33yards
+>>> print(str(c2.convert(1000000)) + c2.units_to)
+333000.0yards
+>>> print(str(c2.convert(10903.893)) + c2.units_to)
+3630.9963690000004yards
+>>> c2 = ScaleConverter('feet', ' yards', 0.333)
+>>> print(str(c2.convert(10903.893)) + c2.units_to)
+3630.9963690000004 yards
+>>> print(str(c2.convert(10)) + c2.units_to)
+3.33 yards
+>>> 
