@@ -1,1 +1,0 @@
-first_number = input('enter the firtst number: ')
