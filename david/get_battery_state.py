@@ -52,7 +52,7 @@ def main():
         # Sleep for one second such that RVR has time to send data back
         time.sleep(1)
         Text(app, text="Battery Percentage " + str(battery_percentage_out['percentage']))
-        Text(app, text='Voltage State ' + str(voltage_state['state']))
+        Text(app, text='Voltage State ' + str(voltage_state[state]))
         Text(app, text=voltage_states)
         app.display()
 
