@@ -34,7 +34,7 @@ def Button_Pressed():
     for x in range(1, 16):
         display.print("MAY CROSS:" + str(green_count))
         green_count = green_count - 1
-        bz.play("A4")
+        bz.play(note_list.get(green_count))
         time.sleep(1)
         bz.stop()
     yellow.toggle()
@@ -43,7 +43,7 @@ def Button_Pressed():
     for x in range(1, 4):
         display.print("DO NOT CROSS:" + str(yellow_count))
         yellow_count = yellow_count - 1
-        bz.play("D4")
+        bz.play(note_list.get(yellow_count))
         time.sleep(1)
         bz.stop()
     yellow.toggle()
