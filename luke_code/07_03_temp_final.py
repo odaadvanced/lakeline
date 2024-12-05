@@ -1,0 +1,24 @@
+# 07_03_temp_final.py
+
+from guizero import *
+from converters import ScaleAndOffsetConverter
+
+c_to_f_conv = ScaleAndOffsetConverter("F", "C", 5/9, 0)
+
+
+def convert():
+    c = float(degCfield.value)
+    degFfield.value = str(c_to_f_conv.convert(c))
+
+
+app = App(title="Temp Converter", layout="grid", width=750, height=375)
+Text(app, text="degrees F", grid=[0, 0])
+degCfield = TextBox(app, grid=[1, 0], width="fill")
+
+Text(app, text="degrees C", grid=[0, 1])
+degFfield = Text(app, grid=[1, 1])
+
+button = PushButton(app, text="No more C now time for better F", grid=[0, 2], command=convert)
+
+app.display()
+print('Now we have no C')
