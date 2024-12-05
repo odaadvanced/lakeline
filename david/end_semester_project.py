@@ -25,7 +25,7 @@ def Button_Pressed():
     for x in range(1, 16):
         display.print("DO NOT CROSS:" + str(count_red))
         count_red = count_red - 1
-        bz.play(note_list.get(count_red))
+        bz.play(note_list.get(count_red + 1))
         time.sleep(1)
         bz.stop()
     red.toggle()
@@ -34,7 +34,7 @@ def Button_Pressed():
     for x in range(1, 16):
         display.print("MAY CROSS:" + str(green_count))
         green_count = green_count - 1
-        bz.play(note_list.get(green_count))
+        bz.play(note_list.get(green_count + 1))
         time.sleep(1)
         bz.stop()
     yellow.toggle()
@@ -43,7 +43,7 @@ def Button_Pressed():
     for x in range(1, 4):
         display.print("DO NOT CROSS:" + str(yellow_count))
         yellow_count = yellow_count - 1
-        bz.play(note_list.get(yellow_count))
+        bz.play(note_list.get(yellow_count + 1))
         time.sleep(1)
         bz.stop()
     yellow.toggle()
