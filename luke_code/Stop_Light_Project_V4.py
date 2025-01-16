@@ -13,7 +13,6 @@ while True:
         ledred.off()
         time.sleep(0.5)
         
-        print('hello')
         
         ledgreen.on()
         time.sleep(2.0)
