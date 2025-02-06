@@ -1,0 +1,9 @@
+amount = float(input("Give the amount of money going in. :"))
+rate_one = float(input("Now give the rate the maney will grow. :"))
+years = int(input("How many years will the maney be in the bank, :"))
+rate_two = rate_one/100
+years_two = years + 1
+for num_years in range (1, years_two):
+    A = amount * (1 + rate_two) ** num_years
+    B = round(A, 2)
+    print(f"amout after {num_years} years is ${B}")
