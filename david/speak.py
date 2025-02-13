@@ -4,7 +4,7 @@ tts = TTS(engine="espeak")
 tts.lang("en-US")
 
 def main():
-    tts.say("the children yearn for the mines")
+    tts.say("Hello, How are you")
     while True:
         pass
     
