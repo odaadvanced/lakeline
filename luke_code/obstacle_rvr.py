@@ -29,7 +29,7 @@ def main():
             )
         else:
             print("No Barrier        ", end='\r')
-            tts.say("AA!")
+            tts.say("No Barrier")
             rvr.drive_with_heading(
                 speed=20,
                 heading=0,
