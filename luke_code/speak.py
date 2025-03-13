@@ -2,9 +2,8 @@ from tts import TTS
 
 tts = TTS(engine="espeak")
 tts.lang("en-US")
-A = input("give a word you would like to say: ")
 def main():
-    tts.say(A)
+    tts.say("ahh")
     while True:
         pass
     
