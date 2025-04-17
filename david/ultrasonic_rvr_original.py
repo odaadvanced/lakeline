@@ -83,21 +83,21 @@ async def main():
         dist_l =  distance_left()
         await asyncio.sleep(.05)
         print("Measurements are {0} cm right and {1} cm left".format(dist_r, dist_l))
-        if dist_r < 20:
-            while dist_r < 20:
+        if dist_r < 25:
+            while dist_r < 25:
                 await rvr.raw_motors(2,180,1,180)
                 dist_r =  distance_right()
                 await asyncio.sleep(0.09)
                 print('turning right')
             await rvr.reset_yaw()
-        elif dist_l < 15:
-            while dist_l < 15:
+        elif dist_l < 20:
+            while dist_l < 20:
                 await rvr.raw_motors(1,180,2,180)
                 dist_l =   distance_left()
                 await asyncio.sleep(0.09)
                 print('turning left')
             await rvr.reset_yaw()
-        elif dist_l >= 15 and dist_r >= 20:
+        elif dist_l >= 20 and dist_r >= 25:
             await rvr.drive_with_heading(90,0,0)
 
 try:
