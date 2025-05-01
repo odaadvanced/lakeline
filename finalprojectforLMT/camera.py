@@ -8,3 +8,5 @@ def picture(directory):
     sleep(5)
     camera.capture(directory)
     camera.stop_preview()
+    
+picture('/dev/lakeline/finalprojectforLMT/')
