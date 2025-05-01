@@ -2,6 +2,7 @@ import gpiozero
 from time import sleep
 from gpiozero import PWMOutputDevice
 from oled_io import Oled_io
+from signal import pause
 
 green_led = gpiozero.LED(18)
 yellow_led = gpiozero.LED(23)
@@ -10,7 +11,6 @@ button = gpiozero.Button(17)
 buzzer = PWMOutputDevice (13)
 display = Oled_io()
 
-is_running = False
 red_led.on()
 display.print("DO NOT CROSS")
 
@@ -23,7 +23,6 @@ def buzz():
 
 def button_pressed():
     print("Button is pressed")
-    button = gpiozero.Button(21)
     display.print("0:15")
     buzz()
     display.print("0:14")
@@ -96,7 +95,7 @@ def button_pressed():
     sleep(3)
     yellow_led.off()
     red_led.on()
-    button = gpiozero.Button(17)
     
-while True:
-    button.when_pressed = button_pressed
+    
+button.when_pressed = button_pressed
+pause()
