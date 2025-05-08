@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
-TRIG = 16
-ECHO = 18
+TRIG = 20
+ECHO = 21
 
 def setup():
     GPIO.setmode(GPIO.BCM)
@@ -29,7 +29,7 @@ def distance():
 
 if __name__ == "__main__":
     setup()
-    try:
-        print(f"Distance: {distance()}")
-    except KeyboardInterrupt:
-        destroy()
+    print(f"Distance: {distance()}")
+    GPIO.cleanup()
+
+    
