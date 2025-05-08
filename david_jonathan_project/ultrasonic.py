@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
-TRIG = 16
-ECHO = 18
+TRIG = 20
+ECHO = 21
 
 def setup():
     GPIO.setmode(GPIO.BCM)
