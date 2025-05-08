@@ -10,4 +10,4 @@ def picture(directory):
     camera.capture(directory)
     camera.stop_preview()
     
-picture('/home/pi/dev/lakeline/finalprojectforLMT/test.png')
+picture('/home/pi/dev/lakeline/finalprojectforLMTpicture{iteration}.png')
