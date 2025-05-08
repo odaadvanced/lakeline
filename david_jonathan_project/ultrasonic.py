@@ -29,7 +29,7 @@ def distance():
 
 if __name__ == "__main__":
     setup()
-    try:
-        print(f"Distance: {distance()}")
-    except KeyboardInterrupt:
-        destroy()
+    print(f"Distance: {distance()}")
+    GPIO.cleanup()
+
+    
