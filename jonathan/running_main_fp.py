@@ -5,15 +5,13 @@ import sys
 from drive_with_sensor import drive
 from led_fp import flash_leds
 from photoresistor_fp import GUI_photoresistor 
-from fan_fp import run_fan
-from oled_distance_fp import OLED_display
+from fan_fp import run_fan    
 
 # Each tuple is (callable, args_tuple)
 TASKS = [
     (drive, ()),           
     (flash_leds, ()),           
-    (GUI_photoresistor, ()),
-    (OLED_display, ()),
+    (GUI_photoresistor, ()),            
     (run_fan, (16,)),         
 ]
 
@@ -31,7 +29,4 @@ def main():
             time.sleep(1)
     except KeyboardInterrupt:
         print("\nStopping all tasks…")
-        sys.exit(0)
-        
-if __name__ == "__main__":
-    main()
+        sys.exit(0) 

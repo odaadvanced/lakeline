@@ -6,18 +6,18 @@ from tkinter import ttk
 from datetime import datetime
 
 def GUI_photoresistor():
-    # ─── SPI/ADC0832 SETUP ─────────────────────────────────────
+    
     spi = spidev.SpiDev()
     spi.open(0, 0)
     spi.max_speed_hz = 500_000
 
-    # ─── CSV LOG SETUP ─────────────────────────────────────────
+    
     log_file = open('brightness_log.csv', 'a', newline='')
     csv_writer = csv.writer(log_file)
     if log_file.tell() == 0:
         csv_writer.writerow(['timestamp', 'brightness_pct'])
 
-    # ─── BUILD GUI ─────────────────────────────────────────────
+    
     root = tk.Tk()
     root.title("Photoresistor Brightness")
     root.geometry("300x120")

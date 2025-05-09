@@ -8,29 +8,28 @@ from sphero_sdk import DriveFlagsBitmask
 rvr = SpheroRvrObserver()
 
 def drive():
-    While True:
-        ult.setup()
-        rvr.wake()
-        time.sleep(1)
-        rvr.reset_yaw()
+    ult.setup()
+    rvr.wake()
+    time.sleep(1)
+    while True:
         while True:
-            rvr.reset_yaw()
-            time.sleep(.3)
-            if ult.distance() <= 20:
-                rvr.drive_with_heading(
-                    speed=0,
-                    heading=90,
-                    flags=DriveFlagsBitmask.drive_reverse.value
-                    )
-                time.sleep(5)
-                break
-            else:
-                rvr.drive_with_heading(
-                    speed=40,
-                    heading=0,
-                    flags=DriveFlagsBitmask.none.value
-                    )
-        
+                rvr.reset_yaw()
+                if ult.distance() <= 20:
+                    rvr.drive_with_heading(
+                        speed=0,
+                        heading=90,
+                        flags=DriveFlagsBitmask.drive_reverse.value
+                        )
+                    time.sleep(5)
+                    break
+                else:
+                    rvr.drive_with_heading(
+                        speed=40,
+                        heading=0,
+                        flags=DriveFlagsBitmask.none.value
+                        )
+                    time.sleep(1)
+            
 def destroy():
     rvr.close()
     GPIO.cleanup()
