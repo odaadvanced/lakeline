@@ -11,9 +11,9 @@ from oled_distance_fp import OLED_display
 # Each tuple is (callable, args_tuple)
 TASKS = [
     (drive, ()),           
-    (flash_leds, ()),           
-    (GUI_photoresistor, ()),
+    (flash_leds, ()),
     (OLED_display, ()),
+    (GUI_photoresistor, ()),            
     (run_fan, (16,)),         
 ]
 
@@ -32,6 +32,5 @@ def main():
     except KeyboardInterrupt:
         print("\nStopping all tasks…")
         sys.exit(0)
-        
 if __name__ == "__main__":
     main()

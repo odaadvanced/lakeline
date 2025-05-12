@@ -7,6 +7,16 @@ import digitalio
 import adafruit_ssd1306
 from PIL import Image, ImageDraw, ImageFont
 
+try:
+    font_label = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 20
+    )
+    font_value = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 55
+    )
+except OSError:
+    font_label = ImageFont.load_default()
+    font_value = ImageFont.load_default()
 def OLED_display():
     """
     Continuously read an HC-SR04 ultrasonic sensor,
@@ -37,7 +47,7 @@ def OLED_display():
     width, height = disp.width, disp.height
     image  = Image.new('1', (width, height))
     draw   = ImageDraw.Draw(image)
-    font   = ImageFont.load_default()
+    
 
     try:
         while True:
@@ -55,11 +65,12 @@ def OLED_display():
 
             # — Compute distance (cm) —
             dist_cm = (stop - start) * 34300 / 2
+    
 
             # — Display on OLED —
             draw.rectangle((0, 0, width, height), outline=0, fill=0)
-            draw.text((0, 0), "Distance:", font=font, fill=255)
-            draw.text((0, 16), f"{dist_cm:.1f} cm", font=font, fill=255)
+            draw.text((0, 0), "Distance:", font=font_label, fill=255)
+            draw.text((0, 16), f"{dist_cm:.1f} cm", font=font_label, fill=255)
             disp.image(image)
             disp.show()
 

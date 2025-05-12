@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import ultrasonic as ult
 from sphero_sdk import SpheroRvrObserver
-from sphero_sdk import DriveFlagsBitmask
+from sphero_sdk import DriveFlagsBitmask, Colors
 
 
 rvr = SpheroRvrObserver()
@@ -15,6 +15,7 @@ def drive():
         while True:
                 rvr.reset_yaw()
                 if ult.distance() <= 20:
+                    rvr.led_control.set_all_leds_color(color=Colors.red)
                     rvr.drive_with_heading(
                         speed=0,
                         heading=90,
@@ -29,6 +30,7 @@ def drive():
                         flags=DriveFlagsBitmask.none.value
                         )
                     time.sleep(1)
+                    rvr.led_control.set_all_leds_color(color=Colors.blue) 
             
 def destroy():
     rvr.close()
