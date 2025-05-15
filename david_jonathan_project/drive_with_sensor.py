@@ -3,7 +3,7 @@ import time
 import ultrasonic as ult
 from sphero_sdk import SpheroRvrObserver
 from sphero_sdk import DriveFlagsBitmask, Colors
-
+from speaker_fp import beep_speaker
 
 rvr = SpheroRvrObserver()
 
@@ -14,8 +14,10 @@ def drive():
     while True:
         while True:
                 rvr.reset_yaw()
-                if ult.distance() <= 20:
+                if ult.distance() <= 30:
+                    print(f"Object Detected")
                     rvr.led_control.set_all_leds_color(color=Colors.red)
+                    beep_speaker(1)
                     rvr.drive_with_heading(
                         speed=0,
                         heading=90,
