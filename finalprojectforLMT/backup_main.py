@@ -13,31 +13,16 @@ tts.lang("en-US")
 
 import RPi.GPIO as GPIO
 
-
-import asyncio
-
 from oled_io import Oled_io
 
 display = Oled_io()
 
-from sphero_sdk import SpheroRvrAsync
 
 from sphero_sdk import SerialAsyncDal
 
 import time
 
 
-loop = asyncio.get_event_loop()
-
-rvr = SpheroRvrAsync(
-
-    dal=SerialAsyncDal(
-
-        loop
-
-    )
-
-)
 
 GPIO.setmode(GPIO.BCM)
 
@@ -130,13 +115,13 @@ def distance_right():
 
     return distance
 
-async def drive():
+def drive():
 
-    await rvr.wake()
+    rvr.wake()
 
-    await rvr.reset_yaw()
+    rvr.reset_yaw()
 
-    await asyncio.sleep(.5)
+    time.sleep(.5)
     
         
     while True:
@@ -146,7 +131,7 @@ async def drive():
 
         dist_l =  distance_left()
         
-        await asyncio.sleep(.05)
+        time.sleep(.05)
 
         print('Measurements are {0} cm right and {1} cm left'.format(dist_r, dist_l))
         display.print(f"{dist_l:.2f}")
@@ -155,15 +140,15 @@ async def drive():
             while dist_r < 40:
                 pwm.start(40)
                 display.print(f"{dist_l:.2f}")
-                await rvr.raw_motors(2,90,1,90)
+                rvr.raw_motors(2,90,1,90)
 
                 dist_r =  distance_right()
 
-                await asyncio.sleep(.02)
+                time.sleep
 
                 print('turning left')
                 tts.say("Turning left.")
-            await rvr.reset_yaw()
+            rvr.reset_yaw()
             
 
         elif dist_l < 40:
@@ -171,21 +156,21 @@ async def drive():
             while dist_l < 40:
                 display.print(f"{dist_l:.2f}")
                 pwm.start(40)
-                await rvr.raw_motors(1,90,2,90)
+                rvr.raw_motors(1,90,2,90)
 
                 dist_l =   distance_left()
 
-                await asyncio.sleep(.02)
+                time.sleep(.02)
 
                 print('turning right')
                 tts.say("Turning right.")
-            await rvr.reset_yaw()
+            rvr.reset_yaw()
             
 
         elif dist_l >= 50 and dist_r >= 50:
             pwm.stop()
         
-            await rvr.drive_with_heading(20,0,0)
+            rvr.drive_with_heading(20,0,0)
             
 
 
@@ -198,17 +183,8 @@ def main():
         
 
 try:
-
-    loop.run_until_complete(
-
-        asyncio.gather(
-
-            main()
-
-        )
-
-    )
-
+    while True:
+        main()
 except KeyboardInterrupt:
 
     print('Program ended by KeyboardInterrupt')
